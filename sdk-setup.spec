@@ -97,14 +97,17 @@ cp -ar kickstarts/* %{buildroot}%{_datadir}/kickstarts/
 mkdir -p %{buildroot}%{_datadir}/kickstarter-configs/sdk/
 cp -ar *.yaml %{buildroot}%{_datadir}/kickstarter-configs/sdk/
 
-# sdk-chroot
+# all sdks
 mkdir -p %{buildroot}%{_bindir}/
 cp sdk-version %{buildroot}%{_bindir}/
 
+# sdk-chroot
 cp mer-sdk-chroot %{buildroot}/
 cp mer-bash-setup %{buildroot}/
 
 # sdk-vm
+mkdir -p %{buildroot}/%{_sysconfdir}/systemd/system
+cp --no-dereference systemd/* %{buildroot}/%{_sysconfdir}/systemd/system/
 
 # sdk-sb2-config
 mkdir -p %{buildroot}/usr/share/scratchbox2/modes/
@@ -127,17 +130,12 @@ if ! rpm --quiet -q ca-certificates && [ -d /etc/ssl/certs ] ; then echo "Cleani
 
 # << pre
 
-%files
-%defattr(-,root,root,-)
-%{_datadir}/kickstarter-configs/sdk/*
-# >> files
-# << files
-
-%files -n sdk-kickstarter-ks
-%defattr(-,root,root,-)
-%{_datadir}/kickstarts/*
-# >> files sdk-kickstarter-ks
-# << files sdk-kickstarter-ks
+%post
+# >> post
+%post -n sdk-vm
+# Enable the information.service
+ln -s %{_sysconfdir}/systemd/system/information.service %{_sysconfdir}/systemd/system/multi-user.wants/
+# << post
 
 %files -n sdk-chroot
 %defattr(-,root,root,-)
@@ -150,6 +148,9 @@ if ! rpm --quiet -q ca-certificates && [ -d /etc/ssl/certs ] ; then echo "Cleani
 %files -n sdk-vm
 %defattr(-,root,root,-)
 %{_bindir}/sdk-version
+%{_bindir}/sdk-info
+%{_sysconfdir}/systemd/system/information.service
+%{_sysconfdir}/systemd/system/default.target
 # >> files sdk-vm
 # << files sdk-vm
 

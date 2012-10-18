@@ -50,6 +50,9 @@ SubPackages:
       Group: System/Base
       Files:
         - "%{_bindir}/sdk-version"
+        - "%{_bindir}/sdk-info"
+        - "%{_sysconfdir}/systemd/system/information.service"
+        - "%{_sysconfdir}/systemd/system/default.target"
 
     - Name:  sdk-sb2-config
       AsWholeName : true
