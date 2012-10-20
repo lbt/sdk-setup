@@ -1,3 +1,6 @@
+* Sat Oct 20 2012 David Greaves <david@dgreaves.com> - 12-3
+ - Add Requires(post) on /bin/ln !
+
 * Sat Oct 20 2012 David Greaves <david@dgreaves.com> - 12-2
  - fully qualify /bin/ln in %post
 

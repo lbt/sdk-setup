@@ -10,7 +10,7 @@ Name:       sdk-setup
 
 Summary:    SDK setup packages for Mer SDK
 Version:    0.12
-Release:    2
+Release:    3
 Group:      System/Base
 License:    GPL
 BuildArch:  noarch
@@ -34,6 +34,7 @@ Contains the mer_sdk_chroot script and supporting configs
 %package -n sdk-vm
 Summary:    Mer SDK files for the VM variant
 Group:      System/Base
+Requires(post): /bin/ln
 Conflicts:   sdk-chroot
 
 %description -n sdk-vm
