@@ -10,7 +10,7 @@ Name:       sdk-setup
 
 Summary:    SDK setup packages for Mer SDK
 Version:    0.12
-Release:    1
+Release:    2
 Group:      System/Base
 License:    GPL
 BuildArch:  noarch
@@ -112,7 +112,7 @@ if ! rpm --quiet -q ca-certificates && [ -d /etc/ssl/certs ] ; then echo "Cleani
 # >> post
 %post -n sdk-vm
 # Enable the information.service
-ln -s %{_sysconfdir}/systemd/system/information.service %{_sysconfdir}/systemd/system/multi-user.target.wants/
+/bin/ln -s %{_sysconfdir}/systemd/system/information.service %{_sysconfdir}/systemd/system/multi-user.target.wants/
 # << post
 
 %files -n sdk-chroot
