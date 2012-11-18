@@ -9,8 +9,8 @@ Name:       sdk-setup
 # << macros
 
 Summary:    SDK setup packages for Mer SDK
-Version:    0.12
-Release:    3
+Version:    0.13
+Release:    1
 Group:      System/Base
 License:    GPL
 BuildArch:  noarch
@@ -95,6 +95,7 @@ cp -ar modes/* %{buildroot}/usr/share/scratchbox2/modes/
 # sdk-utils
 cp src/mb %{buildroot}%{_bindir}/
 cp src/qb %{buildroot}%{_bindir}/
+cp src/sdk-manage %{buildroot}%{_bindir}/
 
 # << install pre
 
@@ -143,5 +144,6 @@ if ! rpm --quiet -q ca-certificates && [ -d /etc/ssl/certs ] ; then echo "Cleani
 %defattr(-,root,root,-)
 %{_bindir}/mb
 %{_bindir}/qb
+%{_bindir}/sdk-manage
 # >> files sdk-utils
 # << files sdk-utils

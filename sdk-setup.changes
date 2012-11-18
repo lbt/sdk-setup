@@ -1,8 +1,14 @@
-* Sat Oct 20 2012 David Greaves <david@dgreaves.com> - 12-3
- - Add Requires(post) on /bin/ln !
+* Sun Nov 18 2012 David Greaves <david@dgreaves.com> - 0.13-1
+- Add sdk_manage for use by the SDK web application
+- Improve sdk-info
+- Fix bugs in sdk-version where using --sdk or --core but not both
+  would break the repos; add --help
 
-* Sat Oct 20 2012 David Greaves <david@dgreaves.com> - 12-2
- - fully qualify /bin/ln in %post
+* Sat Oct 20 2012 David Greaves <david@dgreaves.com> - 0.12-3
+- Add Requires(post) on /bin/ln !
+
+* Sat Oct 20 2012 David Greaves <david@dgreaves.com> - 0.12-2
+- fully qualify /bin/ln in %post
 
 * Fri Oct 19 2012 David Greaves <david@dgreaves.com> - 0.12-1
 - Handle mounting of home and targets shared folders in a more robust

@@ -1,8 +1,8 @@
 Name: sdk-setup
 Summary: SDK setup packages for Mer SDK
 Description: Scripts, configurations and utilities to build Mer SDK and variants
-Version: 0.12
-Release: 3
+Version: 0.13
+Release: 1
 Group: System/Base
 License: GPL
 BuildArch: noarch
@@ -65,3 +65,4 @@ SubPackages:
       Files:
         - "%{_bindir}/mb"
         - "%{_bindir}/qb"
+        - "%{_bindir}/sdk-manage"
