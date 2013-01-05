@@ -1,9 +1,10 @@
-* Mon Dec 17 2012 David Greaves <david@dgreaves.com> - 0.14-1
+* Sat Jan 05 2013 David Greaves <david@dgreaves.com> - 0.14-1
 - sdk-manage: Add file:/// support for target install
 - mb: automatically install package dependencies,
   rsync quietened and symlinks fixed
 - sb2-rules: sdk rules cleaned to make zypper/rpm fully
-  emulated to avoid issues with db versioning and endian-ness
+  emulated to avoid issues with db versioning and endian-ness.
+  Also allow target /usr/src to be used.
 
 * Sun Nov 18 2012 David Greaves <david@dgreaves.com> - 0.13-1
 - Add sdk_manage for use by the SDK web application
