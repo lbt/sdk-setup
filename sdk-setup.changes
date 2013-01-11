@@ -1,3 +1,8 @@
+* Wed Jan 16 2013 David Greaves <david@dgreaves.com> - 0.15-1
+- mb: Also trim tabs from the package name
+- mer-sdk-chroot: Make mounts private before umounting them
+  to avoid problems on F18
+
 * Sat Jan 05 2013 David Greaves <david@dgreaves.com> - 0.14-1
 - sdk-manage: Add file:/// support for target install
 - mb: automatically install package dependencies,
