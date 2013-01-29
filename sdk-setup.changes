@@ -1,3 +1,11 @@
+* Tue Jan 29 2013 David Greaves <david@dgreaves.com> - 0.17-1
+- Use /host_targets/ on the host and /srv/mer/targets on the VM
+- Add --devel support in sdk-manage to allow webapp to handle
+  header packages better
+- Ensure target is synchronised after --devel zypper operations.
+- Improve Scratchbox2 setup and fix cross-486 support
+- Add ttl mount option from rbraakman
+
 * Fri Jan 18 2013 David Greaves <david@dgreaves.com> - 0.16-1
 - Update the lua mapping rules to ensure all solv related
   binaries are accelerated
