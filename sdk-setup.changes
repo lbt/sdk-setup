@@ -1,3 +1,7 @@
+* Wed Jan 30 2013 David Greaves <david@dgreaves.com> - 0.18-1
+- Quick fix to unpack targets correctly
+- Add --target --sync <target>
+
 * Tue Jan 29 2013 David Greaves <david@dgreaves.com> - 0.17-1
 - Use /host_targets/ on the host and /srv/mer/targets on the VM
 - Add --devel support in sdk-manage to allow webapp to handle
