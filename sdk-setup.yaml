@@ -1,7 +1,7 @@
 Name: sdk-setup
 Summary: SDK setup packages for Mer SDK
 Description: Scripts, configurations and utilities to build Mer SDK and variants
-Version: 0.20
+Version: 0.21
 Release: 1
 Group: System/Base
 License: GPL
