@@ -62,6 +62,9 @@ SubPackages:
       Summary: Mer SDK utility scripts
       Description: Contains some utility scripts to support Mer SDK development
       Group: System/Base
+      Requires:
+        # rpm-build required by mb
+        - rpm-build
       Files:
         - "%{_bindir}/mb"
         - "%{_bindir}/qb"

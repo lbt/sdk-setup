@@ -51,6 +51,7 @@ Contains the sdk build and install modes used by scratchbox2 in the SDK
 %package -n sdk-utils
 Summary:    Mer SDK utility scripts
 Group:      System/Base
+Requires:   rpm-build
 
 %description -n sdk-utils
 Contains some utility scripts to support Mer SDK development
