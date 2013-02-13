@@ -1,3 +1,9 @@
+* Wed Feb 13 2013 David Greaves <david@dgreaves.com> - 0.22-1
+- Fix mb rpm-build issues
+- 700  permissions in SDK VM home mount for fussy ssh clients
+- Add --import <target>
+- More vendor friendly Welcome text
+
 * Fri Feb 01 2013 David Greaves <david@dgreaves.com> - 0.21-1
 - Minor fixes to sdk-manage --devel --list
 - Reduce ttl to 200 to improve performance of vbox
