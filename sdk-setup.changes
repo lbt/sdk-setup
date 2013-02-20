@@ -1,3 +1,6 @@
+* Wed Feb 20 2013 David Greaves <david@dgreaves.com> - 0.25-1
+- [sdk-manage] Fix error in rsync
+
 * Fri Feb 15 2013 Juha Kallioinen <juha.kallioinen@jollamobile.com> - 0.24-1
 - [sdk-mangage] Clean up after failed curl download; Allow symlinks in rsync
 - [sdk-chroot] Retain current working directory when entering the SDK chroot
