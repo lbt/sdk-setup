@@ -1,3 +1,7 @@
+* Fri Feb 22 2013 David Greaves <david@dgreaves.com> - 0.26-1
+- [sdk-manage] Refresh target on installation; clean up code
+  Correct target name validation; add --target --refresh
+
 * Wed Feb 20 2013 David Greaves <david@dgreaves.com> - 0.25-1
 - [sdk-manage] Fix error in rsync
 
