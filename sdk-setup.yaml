@@ -1,71 +1,66 @@
 Name: sdk-setup
 Summary: SDK setup packages for Mer SDK
 Description: Scripts, configurations and utilities to build Mer SDK and variants
-Version: 0.27
+Version: 0.28
 Release: 1
 Group: System/Base
 License: GPL
 BuildArch: noarch
 URL: https://github.com/mer-tools/sdk-setup
 Sources:
-    - sdk-setup.tgz
+  - sdk-setup.tgz
 Configure: none
 Builder: none
 SetupOptions: -q -n src
-
 NoFiles: true
-
 SubPackages:
-    - Name:  sdk-chroot
-      AsWholeName : true
-      Summary: Mer SDK files for the chroot variant
-      Description: Contains the mer_sdk_chroot script and supporting configs
-      Group: System/Base
-      RequiresPre:
-        - rpm
-        - "/bin/rm"
-      Conflicts:
-        - sdk-vm
-      Files:
-        - "/mer-sdk-chroot"
-        - "/mer-bash-setup"
-        - "%{_bindir}/sdk-version"
-
-    - Name:  sdk-vm
-      AsWholeName : true
-      Summary: Mer SDK files for the VM variant
-      Description: Contains the supporting configs for VMs
-      Group: System/Base
-      Conflicts:
-        - sdk-chroot
-      RequiresPost:
-        # yes, really. This should not be needed!
-        - "/bin/ln"
-      Files:
-        - "%{_bindir}/sdk-version"
-        - "%{_bindir}/sdk-info"
-        - "%{_sysconfdir}/systemd/system/information.service"
-        - "%{_sysconfdir}/systemd/system/default.target"
-
-    - Name:  sdk-sb2-config
-      AsWholeName : true
-      Summary: Mer SDK files to configure sb2
-      Description: Contains the sdk build and install modes used by scratchbox2 in the SDK
-      Group: System/Base
-      Requires:
-        - scratchbox2 = 2.3.90
-      Files:
-        - "%{_datadir}/scratchbox2/modes/*"
-
-    - Name:  sdk-utils
-      AsWholeName : true
-      Summary: Mer SDK utility scripts
-      Description: Contains some utility scripts to support Mer SDK development
-      Group: System/Base
-      Requires:
-        # rpm-build required by mb
-        - rpm-build
-      Files:
-        - "%{_bindir}/mb"
-        - "%{_bindir}/qb"
-        - "%{_bindir}/sdk-manage"
+  - Name: sdk-chroot
+    AsWholeName: true
+    Summary: Mer SDK files for the chroot variant
+    Description: Contains the mer_sdk_chroot script and supporting configs
+    Group: System/Base
+    RequiresPre:
+      - rpm
+      - /bin/rm
+    Conflicts:
+      - sdk-vm
+    Files:
+      - /mer-sdk-chroot
+      - /mer-bash-setup
+      - '%{_bindir}/sdk-version'
+  - Name: sdk-vm
+    AsWholeName: true
+    Summary: Mer SDK files for the VM variant
+    Description: Contains the supporting configs for VMs
+    Group: System/Base
+    Conflicts:
+      - sdk-chroot
+    RequiresPost:
+      - /bin/ln
+    Files:
+      - '%{_bindir}/sdk-version'
+      - '%{_bindir}/sdk-info'
+      - '%{_sysconfdir}/systemd/system/information.service'
+      - '%{_sysconfdir}/systemd/system/default.target'
+  - Name: sdk-sb2-config
+    AsWholeName: true
+    Summary: Mer SDK files to configure sb2
+    Description: Contains the sdk build and install modes used by scratchbox2 in the
+      SDK
+    Group: System/Base
+    Requires:
+      - scratchbox2 = 2.3.90
+    Files:
+      - '%{_datadir}/scratchbox2/modes/*'
+  - Name: sdk-utils
+    AsWholeName: true
+    Summary: Mer SDK utility scripts
+    Description: Contains some utility scripts to support Mer SDK development
+    Group: System/Base
+    Requires:
+      - rpm-build
+    Files:
+      - '%{_bindir}/mb'
+      - '%{_bindir}/qb'
+      - '%{_bindir}/sdk-manage'
+Patches: []

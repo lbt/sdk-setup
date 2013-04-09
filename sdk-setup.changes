@@ -1,3 +1,8 @@
+* Tue Apr 2013 David Greaves <david@dgreaves.com> - 0.28-1
+- Update rule_file_interface_version to 105
+- Don't assume that there is -n in %setup line.
+- Use auto-refresh on repositories
+
 * Fri Mar 01 2013 Juha Kallioinen <juha.kallioinen@jollamobile.com> - 0.27-1
 - [sdk-manage] Empty target name handling, tar compressor agnostic,
   collected paths to variables
