@@ -43,7 +43,7 @@ Contains the supporting configs for VMs
 %package -n sdk-sb2-config
 Summary:    Mer SDK files to configure sb2
 Group:      System/Base
-Requires:   scratchbox2
+Requires:   scratchbox2 = 2.3.90
 
 %description -n sdk-sb2-config
 Contains the sdk build and install modes used by scratchbox2 in the SDK

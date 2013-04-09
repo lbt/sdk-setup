@@ -53,7 +53,7 @@ SubPackages:
       Description: Contains the sdk build and install modes used by scratchbox2 in the SDK
       Group: System/Base
       Requires:
-        - scratchbox2
+        - scratchbox2 = 2.3.90
       Files:
         - "%{_datadir}/scratchbox2/modes/*"
 
