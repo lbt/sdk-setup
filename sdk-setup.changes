@@ -1,3 +1,8 @@
+* Tue Apr 2013 David Greaves <david@dgreaves.com> - 0.29-1
+- rpm/ can be overridden by setting PKGDIR but defaults to rpm/ (lbt)
+- mb: fix mb build --help (w00t)
+- mb: Add multiple job support. (w00t)
+
 * Tue Apr 2013 David Greaves <david@dgreaves.com> - 0.28-1
 - Update rule_file_interface_version to 105
 - Don't assume that there is -n in %setup line.
