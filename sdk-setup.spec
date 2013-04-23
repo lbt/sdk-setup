@@ -52,6 +52,7 @@ Contains the sdk build and install modes used by scratchbox2 in the SDK
 Summary:    Mer SDK utility scripts
 Group:      System/Base
 Requires:   rpm-build
+Requires:   python-lxml
 
 %description -n sdk-utils
 Contains some utility scripts to support Mer SDK development
@@ -146,5 +147,6 @@ if ! rpm --quiet -q ca-certificates && [ -d /etc/ssl/certs ] ; then echo "Cleani
 %{_bindir}/mb
 %{_bindir}/qb
 %{_bindir}/sdk-manage
+%{_bindir}/updateQtCreatorTargets
 # >> files sdk-utils
 # << files sdk-utils

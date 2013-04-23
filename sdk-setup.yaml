@@ -59,8 +59,10 @@ SubPackages:
     Group: System/Base
     Requires:
       - rpm-build
+      - python-lxml
     Files:
       - '%{_bindir}/mb'
       - '%{_bindir}/qb'
       - '%{_bindir}/sdk-manage'
+      - '%{_bindir}/updateQtCreatorTargets'
 Patches: []
