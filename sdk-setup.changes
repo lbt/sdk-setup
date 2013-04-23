@@ -1,3 +1,8 @@
+* Tue Apr 2013 David Greaves <david@dgreaves.com> - 0.30-1
+- [sdk] provide updateQtCreatorTargets to tell QtCreator about target changes 
+- [mb] Check that Source[0] line exists and give error if it doesn't.
+- [mb] Stop processing forwards and give error if invalid spec file path is given.
+    
 * Tue Apr 2013 David Greaves <david@dgreaves.com> - 0.29-1
 - rpm/ can be overridden by setting PKGDIR but defaults to rpm/ (lbt)
 - mb: fix mb build --help (w00t)
