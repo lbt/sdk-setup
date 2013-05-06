@@ -9,7 +9,7 @@ Name:       sdk-setup
 # << macros
 
 Summary:    SDK setup packages for Mer SDK
-Version:    0.3
+Version:    0.31
 Release:    1
 Group:      System/Base
 License:    GPL
@@ -82,13 +82,16 @@ mkdir -p %{buildroot}%{_bindir}/
 cp src/sdk-version %{buildroot}%{_bindir}/
 
 # sdk-chroot
+mkdir -p %{buildroot}/%{_sysconfdir}
 cp src/mer-sdk-chroot %{buildroot}/
 cp src/mer-bash-setup %{buildroot}/
+echo "This file tells ssu this is a chroot SDK installation" > %{buildroot}/%{_sysconfdir}/mer-sdk-chroot
 
 # sdk-vm
 mkdir -p %{buildroot}/%{_sysconfdir}/systemd/system
 cp --no-dereference systemd/* %{buildroot}/%{_sysconfdir}/systemd/system/
 cp src/sdk-info %{buildroot}%{_bindir}/
+echo "This file tells ssu this is a virtualbox SDK installation" > %{buildroot}/%{_sysconfdir}/mer-sdk-vbox
 
 # sdk-sb2-config
 mkdir -p %{buildroot}/usr/share/scratchbox2/modes/
@@ -98,7 +101,7 @@ cp -ar modes/* %{buildroot}/usr/share/scratchbox2/modes/
 cp src/mb %{buildroot}%{_bindir}/
 cp src/qb %{buildroot}%{_bindir}/
 cp src/sdk-manage %{buildroot}%{_bindir}/
-
+cp src/updateQtCreatorTargets %{buildroot}%{_bindir}/updateQtCreatorTargets
 # << install pre
 
 # >> install post
@@ -108,7 +111,7 @@ cp src/sdk-manage %{buildroot}%{_bindir}/
 %pre
 # >> pre
 %pre -n sdk-chroot
-if ! rpm --quiet -q ca-certificates && [ -d /etc/ssl/certs ] ; then echo "Cleaning up copied ssl certs. ca-certificates should now install"; rm -rf /etc/ssl/certs ;fi
+if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then echo "Cleaning up copied ssl certs. ca-certificates should now install"; rm -rf /%{_sysconfdir}/ssl/certs ;fi
 
 # << pre
 
@@ -124,6 +127,7 @@ if ! rpm --quiet -q ca-certificates && [ -d /etc/ssl/certs ] ; then echo "Cleani
 /mer-sdk-chroot
 /mer-bash-setup
 %{_bindir}/sdk-version
+%{_sysconfdir}/mer-sdk-chroot
 # >> files sdk-chroot
 # << files sdk-chroot
 
@@ -133,6 +137,7 @@ if ! rpm --quiet -q ca-certificates && [ -d /etc/ssl/certs ] ; then echo "Cleani
 %{_bindir}/sdk-info
 %{_sysconfdir}/systemd/system/information.service
 %{_sysconfdir}/systemd/system/default.target
+%{_sysconfdir}/mer-sdk-vbox
 # >> files sdk-vm
 # << files sdk-vm
 

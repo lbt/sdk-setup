@@ -1,7 +1,7 @@
 Name: sdk-setup
 Summary: SDK setup packages for Mer SDK
 Description: Scripts, configurations and utilities to build Mer SDK and variants
-Version: 0.3
+Version: 0.31
 Release: 1
 Group: System/Base
 License: GPL
@@ -28,6 +28,7 @@ SubPackages:
       - /mer-sdk-chroot
       - /mer-bash-setup
       - '%{_bindir}/sdk-version'
+      - '%{_sysconfdir}/mer-sdk-chroot'
   - Name: sdk-vm
     AsWholeName: true
     Summary: Mer SDK files for the VM variant
@@ -42,6 +43,7 @@ SubPackages:
       - '%{_bindir}/sdk-info'
       - '%{_sysconfdir}/systemd/system/information.service'
       - '%{_sysconfdir}/systemd/system/default.target'
+      - '%{_sysconfdir}/mer-sdk-vbox'
   - Name: sdk-sb2-config
     AsWholeName: true
     Summary: Mer SDK files to configure sb2
