@@ -1,3 +1,9 @@
+* Thu May 2013 David Greaves <david@dgreaves.com> - 0.33-1
+- sdk-version: fix --go to actually go when it's the sole argument
+- updateQtCreatorTargets: Use cleaner xml format and handle missing
+- mb2: Add new mb2 code with Workaround rpmbuild not setting _builddir
+- sdk-manage: stor XML in shared folder and run as mersdk user so sb2 targets are visible
+
 * Mon May 13 2013 Juha Kallioinen <juha.kallioinen@jollamobile.com> - 0.32-1
 - [modes] sdk-build+pp only accelerate python if explicitly requested
 
