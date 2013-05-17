@@ -64,6 +64,7 @@ SubPackages:
       - python-lxml
     Files:
       - '%{_bindir}/mb'
+      - '%{_bindir}/mb2'
       - '%{_bindir}/qb'
       - '%{_bindir}/sdk-manage'
       - '%{_bindir}/updateQtCreatorTargets'

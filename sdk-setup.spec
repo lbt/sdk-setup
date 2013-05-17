@@ -98,6 +98,7 @@ cp -ar modes/* %{buildroot}/usr/share/scratchbox2/modes/
 
 # sdk-utils
 cp src/mb %{buildroot}%{_bindir}/
+cp src/mb2 %{buildroot}%{_bindir}/
 cp src/qb %{buildroot}%{_bindir}/
 cp src/sdk-manage %{buildroot}%{_bindir}/
 cp src/updateQtCreatorTargets %{buildroot}%{_bindir}/updateQtCreatorTargets
@@ -149,6 +150,7 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %files -n sdk-utils
 %defattr(-,root,root,-)
 %{_bindir}/mb
+%{_bindir}/mb2
 %{_bindir}/qb
 %{_bindir}/sdk-manage
 %{_bindir}/updateQtCreatorTargets
