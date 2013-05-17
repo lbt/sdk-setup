@@ -1,4 +1,7 @@
-* Thu May 2013 David Greaves <david@dgreaves.com> - 0.33-1
+* Fri May 17 2013 David Greaves <david@dgreaves.com> - 0.33-2
+- mb2: add to installed files list
+    
+* Thu May 16 2013 David Greaves <david@dgreaves.com> - 0.33-1
 - sdk-version: fix --go to actually go when it's the sole argument
 - updateQtCreatorTargets: Use cleaner xml format and handle missing
 - mb2: Add new mb2 code with Workaround rpmbuild not setting _builddir
