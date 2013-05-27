@@ -141,6 +141,7 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %{_bindir}/sdk-setup-enginelan
 %{_sysconfdir}/systemd/system/information.service
 %{_sysconfdir}/systemd/system/sdk-enginelan.service
+%{_sysconfdir}/systemd/system/host_targets.mount
 %{_sysconfdir}/systemd/system/default.target
 %{_sysconfdir}/mer-sdk-vbox
 # >> files sdk-vm
