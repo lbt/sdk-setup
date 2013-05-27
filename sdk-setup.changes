@@ -1,3 +1,6 @@
+* Mon May 27 2013 David Greaves <david@dgreaves.com> - 0.34-2
+- Add host_targets.mount
+
 * Mon May 27 2013 David Greaves <david@dgreaves.com> - 0.34-1
 - mb2: Ensure spec is up-to-date with yaml
 - sdk-vm: Add services to support sdk engine internal lan

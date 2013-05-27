@@ -10,7 +10,7 @@ Name:       sdk-setup
 
 Summary:    SDK setup packages for Mer SDK
 Version:    0.34
-Release:    1
+Release:    2
 Group:      System/Base
 License:    GPL
 BuildArch:  noarch
