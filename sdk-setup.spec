@@ -34,6 +34,7 @@ Contains the mer_sdk_chroot script and supporting configs
 %package -n sdk-vm
 Summary:    Mer SDK files for the VM variant
 Group:      System/Base
+Requires:   connman >= 1.14
 Requires(post): /bin/ln
 Conflicts:  sdk-chroot
 
@@ -90,6 +91,7 @@ echo "This file tells ssu this is a chroot SDK installation" > %{buildroot}/%{_s
 mkdir -p %{buildroot}/%{_sysconfdir}/systemd/system
 cp --no-dereference systemd/* %{buildroot}/%{_sysconfdir}/systemd/system/
 cp src/sdk-info %{buildroot}%{_bindir}/
+cp src/sdk-setup-enginelan %{buildroot}%{_bindir}/
 echo "This file tells ssu this is a virtualbox SDK installation" > %{buildroot}/%{_sysconfdir}/mer-sdk-vbox
 
 # sdk-sb2-config
@@ -119,6 +121,7 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %post -n sdk-vm
 # Enable the information.service
 /bin/ln -s %{_sysconfdir}/systemd/system/information.service %{_sysconfdir}/systemd/system/multi-user.target.wants/
+/bin/ln -s %{_sysconfdir}/systemd/system/sdk-enginelan.service %{_sysconfdir}/systemd/system/multi-user.target.wants/
 # << post
 
 
@@ -135,7 +138,9 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %defattr(-,root,root,-)
 %{_bindir}/sdk-version
 %{_bindir}/sdk-info
+%{_bindir}/sdk-setup-enginelan
 %{_sysconfdir}/systemd/system/information.service
+%{_sysconfdir}/systemd/system/sdk-enginelan.service
 %{_sysconfdir}/systemd/system/default.target
 %{_sysconfdir}/mer-sdk-vbox
 # >> files sdk-vm

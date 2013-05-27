@@ -38,10 +38,14 @@ SubPackages:
       - sdk-chroot
     RequiresPost:
       - /bin/ln
+    Requires:
+      - connman >= 1.14
     Files:
       - '%{_bindir}/sdk-version'
       - '%{_bindir}/sdk-info'
+      - '%{_bindir}/sdk-setup-enginelan'
       - '%{_sysconfdir}/systemd/system/information.service'
+      - '%{_sysconfdir}/systemd/system/sdk-enginelan.service'
       - '%{_sysconfdir}/systemd/system/default.target'
       - '%{_sysconfdir}/mer-sdk-vbox'
   - Name: sdk-sb2-config
