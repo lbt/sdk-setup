@@ -1,3 +1,7 @@
+* Wed May 29 2013 David Greaves <david@dgreaves.com> - 0.35-1
+- sdk-utils: Run specify on yaml, not spec
+- sb2 modes: Make libsb2 upgradable in sdk-install mode
+
 * Mon May 27 2013 David Greaves <david@dgreaves.com> - 0.34-2
 - Add host_targets.mount
 
