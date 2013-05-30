@@ -1,3 +1,13 @@
+* Thu May 2013 David Greaves <david@dgreaves.com> - 0.36-1
+- mb2: preliminary devices support
+- mb2: Add -p to specify projectdir and tidy up whitespace
+- sdk-vm: Re-organise shared folders
+- sdk-manage: Add a --status to --sdk to allow QtC to verify that all is well
+- sdk-manage: Add/remove /home/src<N> mountpoints using sdk-manage --srcdir --add/--remove 1
+- mb2: Verify the target dependencies when qmake is run
+- sdk-enginelan: Correct enginelan to support dual ethernet
+- systemd: Setup new shared folder mounts
+
 * Wed May 29 2013 David Greaves <david@dgreaves.com> - 0.35-1
 - sdk-utils: Run specify on yaml, not spec
 - sb2 modes: Make libsb2 upgradable in sdk-install mode

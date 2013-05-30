@@ -6,10 +6,15 @@
 Name:       sdk-setup
 
 # >> macros
+%define systemd_post() \
+# Initial installation \
+/bin/systemctl -f preset %{?*} >/dev/null 2>&1 || : \
+%{nil}
+
 # << macros
 
 Summary:    SDK setup packages for Mer SDK
-Version:    0.35
+Version:    0.36
 Release:    1
 Group:      System/Base
 License:    GPL
@@ -17,6 +22,7 @@ BuildArch:  noarch
 URL:        https://github.com/mer-tools/sdk-setup
 Source0:    sdk-setup.tgz
 Source100:  sdk-setup.yaml
+BuildRequires:  systemd
 
 %description
 Scripts, configurations and utilities to build Mer SDK and variants
@@ -92,6 +98,9 @@ mkdir -p %{buildroot}/%{_unitdir}
 cp --no-dereference systemd/* %{buildroot}/%{_unitdir}/
 cp src/sdk-info %{buildroot}%{_bindir}/
 cp src/sdk-setup-enginelan %{buildroot}%{_bindir}/
+# This should really be %%{_unitdir}/default.target but systemd owns that :/
+mkdir -p %{buildroot}/%{_sysconfdir}/systemd/system/
+ln -sf %{_unitdir}/multi-user.target  %{buildroot}/%{_sysconfdir}/systemd/system/default.target
 echo "This file tells ssu this is a virtualbox SDK installation" > %{buildroot}/%{_sysconfdir}/mer-sdk-vbox
 
 # sdk-sb2-config
@@ -120,6 +129,7 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %preun -n sdk-vm
 %systemd_preun home-mersdk.mount
 %systemd_preun etc-mersdk-share.mount
+%systemd_preun etc-ssh-authorized_keys.mount
 %systemd_preun host_targets.mount
 %systemd_preun information.service
 %systemd_preun sdk-enginelan.service
@@ -130,6 +140,7 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %post -n sdk-vm
 %systemd_post home-mersdk.mount
 %systemd_post etc-mersdk-share.mount
+%systemd_post etc-ssh-authorized_keys.mount
 %systemd_post host_targets.mount
 %systemd_post information.service
 %systemd_post sdk-enginelan.service
@@ -160,8 +171,9 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %{_unitdir}/sdk-enginelan.service
 %{_unitdir}/host_targets.mount
 %{_unitdir}/home-mersdk.mount
-%{_unitdir}/etc-mersdk.mount
-%{_unitdir}/default.target
+%{_unitdir}/etc-mersdk-share.mount
+%{_unitdir}/etc-ssh-authorized_keys.mount
+%config %{_sysconfdir}/systemd/system/default.target
 %{_sysconfdir}/mer-sdk-vbox
 # >> files sdk-vm
 # << files sdk-vm
