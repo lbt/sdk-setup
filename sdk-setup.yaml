@@ -9,6 +9,7 @@ BuildArch: noarch
 URL: https://github.com/mer-tools/sdk-setup
 Sources:
   - sdk-setup.tgz
+BuildRequires: systemd
 Configure: none
 Builder: none
 SetupOptions: -q -n src
@@ -44,10 +45,12 @@ SubPackages:
       - '%{_bindir}/sdk-version'
       - '%{_bindir}/sdk-info'
       - '%{_bindir}/sdk-setup-enginelan'
-      - '%{_sysconfdir}/systemd/system/information.service'
-      - '%{_sysconfdir}/systemd/system/sdk-enginelan.service'
-      - '%{_sysconfdir}/systemd/system/host_targets.mount'
-      - '%{_sysconfdir}/systemd/system/default.target'
+      - '%{_unitdir}/information.service'
+      - '%{_unitdir}/sdk-enginelan.service'
+      - '%{_unitdir}/host_targets.mount'
+      - '%{_unitdir}/home-mersdk.mount'
+      - '%{_unitdir}/etc-mersdk.mount'
+      - '%{_unitdir}/default.target'
       - '%{_sysconfdir}/mer-sdk-vbox'
   - Name: sdk-sb2-config
     AsWholeName: true
