@@ -41,6 +41,7 @@ Contains the mer_sdk_chroot script and supporting configs
 Summary:    Mer SDK files for the VM variant
 Group:      System/Base
 Requires:   connman >= 1.14
+Requires:   virtualbox-guest-tools
 Requires(post): /bin/ln
 Conflicts:  sdk-chroot
 

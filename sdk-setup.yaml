@@ -42,6 +42,7 @@ SubPackages:
       - /bin/ln
     Requires:
       - connman >= 1.14
+      - virtualbox-guest-tools
     Files:
       - '%{_bindir}/sdk-version'
       - '%{_bindir}/sdk-info'
