@@ -1,3 +1,6 @@
+* Mon Jun 03 2013 David Greaves <david@dgreaves.com> - 0.37-1
+- mb2: add deploy and ssh|run commands
+
 * Thu May 2013 David Greaves <david@dgreaves.com> - 0.36-1
 - mb2: preliminary devices support
 - mb2: Add -p to specify projectdir and tidy up whitespace
