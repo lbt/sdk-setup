@@ -1,3 +1,8 @@
+* Wed Jun 05 2013 David Greaves <david@dgreaves.com> - 0.38-1
+- mb2: mb2 build should now operate in much the same way as "mb build"
+  but without the rsync or need for mb clean
+- mb2: support a default target if the user has one
+
 * Mon Jun 03 2013 David Greaves <david@dgreaves.com> - 0.37-1
 - mb2: add deploy and ssh|run commands
 
