@@ -1,3 +1,9 @@
+* Thu Jun 06 2013 David Greaves <david@dgreaves.com> - 0.39-1
+- sdk-manage: Update targets xml when doing a sync too
+- mb2: Only handle commands once all args are in and validated
+- mb2: Remove %patch lines from spec before building
+  since rpmbuild complains even if not doing the setup phase
+
 * Wed Jun 05 2013 David Greaves <david@dgreaves.com> - 0.38-1
 - mb2: mb2 build should now operate in much the same way as "mb build"
   but without the rsync or need for mb clean
