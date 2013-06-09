@@ -1,3 +1,6 @@
+* Sun Jun 09 2013 David Greaves <david@dgreaves.com> - 0.40-1
+- [mb2] Fix the Buildrequires for packages with : and reduce to a single sed call
+
 * Thu Jun 06 2013 David Greaves <david@dgreaves.com> - 0.39-1
 - sdk-manage: Update targets xml when doing a sync too
 - mb2: Only handle commands once all args are in and validated
