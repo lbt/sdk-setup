@@ -20,7 +20,7 @@ Group:      System/Base
 License:    GPL
 BuildArch:  noarch
 URL:        https://github.com/mer-tools/sdk-setup
-Source0:    sdk-setup.tgz
+Source0:    sdk-setup-%{version}.tar.gz
 Source100:  sdk-setup.yaml
 BuildRequires:  systemd
 
@@ -104,6 +104,11 @@ mkdir -p %{buildroot}/%{_sysconfdir}/systemd/system/
 ln -sf %{_unitdir}/multi-user.target  %{buildroot}/%{_sysconfdir}/systemd/system/default.target
 echo "This file tells ssu this is a virtualbox SDK installation" > %{buildroot}/%{_sysconfdir}/mer-sdk-vbox
 
+mkdir -p %{buildroot}/%{_sysconfdir}/ssh/
+mkdir -p %{buildroot}/%{_sysconfdir}/ssh/authorized_keys
+cp ssh-env.conf  %{buildroot}/%{_sysconfdir}/ssh/
+cp sshd_config_engine  %{buildroot}/%{_sysconfdir}/ssh/
+
 # sdk-sb2-config
 mkdir -p %{buildroot}/usr/share/scratchbox2/modes/
 cp -ar modes/* %{buildroot}/usr/share/scratchbox2/modes/
@@ -175,6 +180,9 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %{_unitdir}/etc-mersdk-share.mount
 %{_unitdir}/etc-ssh-authorized_keys.mount
 %config %{_sysconfdir}/systemd/system/default.target
+%config %{_sysconfdir}/ssh/ssh-env.conf
+%config %{_sysconfdir}/ssh/sshd_config_engine
+%dir %{_sysconfdir}/ssh/authorized_keys
 %{_sysconfdir}/mer-sdk-vbox
 # >> files sdk-vm
 # << files sdk-vm

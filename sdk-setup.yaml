@@ -8,7 +8,7 @@ License: GPL
 BuildArch: noarch
 URL: https://github.com/mer-tools/sdk-setup
 Sources:
-  - sdk-setup.tgz
+  - sdk-setup-%{version}.tar.gz
 PkgBR:
   - systemd
 Configure: none
@@ -54,6 +54,9 @@ SubPackages:
       - '%{_unitdir}/etc-mersdk-share.mount'
       - '%{_unitdir}/etc-ssh-authorized_keys.mount'
       - '%config %{_sysconfdir}/systemd/system/default.target'
+      - '%config %{_sysconfdir}/ssh/ssh-env.conf'
+      - '%config %{_sysconfdir}/ssh/sshd_config_engine'
+      - '%dir %{_sysconfdir}/ssh/authorized_keys'
       - '%{_sysconfdir}/mer-sdk-vbox'
   - Name: sdk-sb2-config
     AsWholeName: true
