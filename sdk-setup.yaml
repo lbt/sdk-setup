@@ -41,8 +41,10 @@ SubPackages:
     RequiresPost:
       - /bin/ln
     Requires:
+      - sdk-utils
       - connman >= 1.14
       - virtualbox-guest-tools
+      - openssh-server
     Files:
       - '%{_bindir}/sdk-version'
       - '%{_bindir}/sdk-info'
@@ -76,6 +78,7 @@ SubPackages:
     Requires:
       - rpm-build
       - python-lxml
+      - sudo
     Files:
       - '%{_bindir}/mb'
       - '%{_bindir}/mb2'

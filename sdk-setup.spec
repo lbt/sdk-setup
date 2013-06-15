@@ -40,8 +40,10 @@ Contains the mer_sdk_chroot script and supporting configs
 %package -n sdk-vm
 Summary:    Mer SDK files for the VM variant
 Group:      System/Base
+Requires:   sdk-utils
 Requires:   connman >= 1.14
 Requires:   virtualbox-guest-tools
+Requires:   openssh-server
 Requires(post): /bin/ln
 Conflicts:  sdk-chroot
 
@@ -61,6 +63,7 @@ Summary:    Mer SDK utility scripts
 Group:      System/Base
 Requires:   rpm-build
 Requires:   python-lxml
+Requires:   sudo
 
 %description -n sdk-utils
 Contains some utility scripts to support Mer SDK development
