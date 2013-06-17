@@ -1,7 +1,7 @@
 Name: sdk-setup
 Summary: SDK setup packages for Mer SDK
 Description: Scripts, configurations and utilities to build Mer SDK and variants
-Version: 0.42
+Version: 0.43
 Release: 1
 Group: System/Base
 License: GPL
@@ -51,13 +51,14 @@ SubPackages:
       - '%{_bindir}/sdk-setup-enginelan'
       - '%{_unitdir}/information.service'
       - '%{_unitdir}/sdk-enginelan.service'
-      - '%{_unitdir}/host_targets.mount'
-      - '%{_unitdir}/home-mersdk.mount'
-      - '%{_unitdir}/etc-mersdk-share.mount'
+      - '%{_unitdir}/host_targets.service'
+      - '%{_unitdir}/home-mersdk.service'
+      - '%{_unitdir}/etc-mersdk-share.service'
       - '%{_unitdir}/etc-ssh-authorized_keys.mount'
       - '%config %{_sysconfdir}/systemd/system/default.target'
       - '%config %{_sysconfdir}/ssh/ssh-env.conf'
       - '%config %{_sysconfdir}/ssh/sshd_config_engine'
+      - '%config %{_sysconfdir}/mersdk.env.systemd'
       - '%dir %{_sysconfdir}/ssh/authorized_keys'
       - '%{_sysconfdir}/mer-sdk-vbox'
   - Name: sdk-sb2-config

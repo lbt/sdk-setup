@@ -14,7 +14,7 @@ Name:       sdk-setup
 # << macros
 
 Summary:    SDK setup packages for Mer SDK
-Version:    0.42
+Version:    0.43
 Release:    1
 Group:      System/Base
 License:    GPL
@@ -112,6 +112,9 @@ mkdir -p %{buildroot}/%{_sysconfdir}/ssh/authorized_keys
 cp ssh-env.conf  %{buildroot}/%{_sysconfdir}/ssh/
 cp sshd_config_engine  %{buildroot}/%{_sysconfdir}/ssh/
 
+# Until login.prefs.systemd is ready
+cp mersdk.env.systemd  %{buildroot}/%{_sysconfdir}/
+
 # sdk-sb2-config
 mkdir -p %{buildroot}/usr/share/scratchbox2/modes/
 cp -ar modes/* %{buildroot}/usr/share/scratchbox2/modes/
@@ -136,10 +139,10 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %preun
 # >> preun
 %preun -n sdk-vm
-%systemd_preun home-mersdk.mount
-%systemd_preun etc-mersdk-share.mount
+%systemd_preun home-mersdk.service
+%systemd_preun etc-mersdk-share.service
 %systemd_preun etc-ssh-authorized_keys.mount
-%systemd_preun host_targets.mount
+%systemd_preun host_targets.service
 %systemd_preun information.service
 %systemd_preun sdk-enginelan.service
 # << preun
@@ -147,10 +150,10 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %post
 # >> post
 %post -n sdk-vm
-%systemd_post home-mersdk.mount
-%systemd_post etc-mersdk-share.mount
+%systemd_post home-mersdk.service
+%systemd_post etc-mersdk-share.service
 %systemd_post etc-ssh-authorized_keys.mount
-%systemd_post host_targets.mount
+%systemd_post host_targets.service
 %systemd_post information.service
 %systemd_post sdk-enginelan.service
 # << post
@@ -178,13 +181,14 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %{_bindir}/sdk-setup-enginelan
 %{_unitdir}/information.service
 %{_unitdir}/sdk-enginelan.service
-%{_unitdir}/host_targets.mount
-%{_unitdir}/home-mersdk.mount
-%{_unitdir}/etc-mersdk-share.mount
+%{_unitdir}/host_targets.service
+%{_unitdir}/home-mersdk.service
+%{_unitdir}/etc-mersdk-share.service
 %{_unitdir}/etc-ssh-authorized_keys.mount
 %config %{_sysconfdir}/systemd/system/default.target
 %config %{_sysconfdir}/ssh/ssh-env.conf
 %config %{_sysconfdir}/ssh/sshd_config_engine
+%config %{_sysconfdir}/mersdk.env.systemd
 %dir %{_sysconfdir}/ssh/authorized_keys
 %{_sysconfdir}/mer-sdk-vbox
 # >> files sdk-vm

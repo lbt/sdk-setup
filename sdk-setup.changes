@@ -1,3 +1,8 @@
+* Mon Jun 17 2013 David Greaves <david@dgreaves.com> - 0.43-1
+- [sdk-manage] Fix target sync
+- [sdk] Convert .mount to .service to permit use of env $VAR in args to set UID
+- [sdk-chroot] Retains cwd with spaces when entering chroot
+
 * Mon Jun 17 2013 David Greaves <david@dgreaves.com> - 0.42-1
 - [sdk-manage] Only sync minimal data to host's target as per Alessandro's list
 
