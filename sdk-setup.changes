@@ -1,3 +1,7 @@
+* Fri Jun 21 2013 David Greaves <david@dgreaves.com> - 0.44-1
+- [mb2] Deployment --rsync should be done as deviceuser
+- Add mer-branding as a template
+
 * Mon Jun 17 2013 David Greaves <david@dgreaves.com> - 0.43-1
 - [sdk-manage] Fix target sync
 - [sdk] Convert .mount to .service to permit use of env $VAR in args to set UID
