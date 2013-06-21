@@ -1,3 +1,7 @@
+* Fri Jun 21 2013 David Greaves <david@dgreaves.com> - 0.45-1
+- Install to /home/deploy which supports permissions unlike shared folders
+- [sdk-vm] Make HOME 755 so Qt's make install sets permissions liberally
+
 * Fri Jun 21 2013 David Greaves <david@dgreaves.com> - 0.44-1
 - [mb2] Deployment --rsync should be done as deviceuser
 - Add mer-branding as a template
