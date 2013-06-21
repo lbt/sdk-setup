@@ -68,6 +68,16 @@ Requires:   sudo
 %description -n sdk-utils
 Contains some utility scripts to support Mer SDK development
 
+%package -n sdk-mer-branding
+Summary:    Mer Branding for the SDK Engine
+Group:      System/Base
+Requires:   plymouth-lite
+Requires:   sdk-info
+Provides:   boot-splash-screen
+
+%description -n sdk-mer-branding
+Splash screen for the SDK Engine
+
 %prep
 %setup -q -n src
 
@@ -125,6 +135,11 @@ cp src/mb2 %{buildroot}%{_bindir}/
 cp src/qb %{buildroot}%{_bindir}/
 cp src/sdk-manage %{buildroot}%{_bindir}/
 cp src/updateQtCreatorTargets %{buildroot}%{_bindir}/updateQtCreatorTargets
+
+# sdk-mer-branding
+install -D -m 644 branding/mer-splash.png %{buildroot}%{_datadir}/plymouth/splash.png
+install -D -m 755 branding/splashfontcol %{buildroot}%{_sysconfdir}/sysconfig/splashfontcol
+
 # << install pre
 
 # >> install post
@@ -209,3 +224,10 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %{_bindir}/updateQtCreatorTargets
 # >> files sdk-utils
 # << files sdk-utils
+
+%files -n sdk-mer-branding
+%defattr(-,root,root,-)
+%{_datadir}/plymouth/splash.png
+%{_sysconfdir}/sysconfig/splashfontcol
+# >> files sdk-mer-branding
+# << files sdk-mer-branding

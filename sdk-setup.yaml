@@ -86,4 +86,18 @@ SubPackages:
       - '%{_bindir}/qb'
       - '%{_bindir}/sdk-manage'
       - '%{_bindir}/updateQtCreatorTargets'
+  - Name: sdk-mer-branding
+    Summary: Mer Branding for the SDK Engine
+    AsWholeName: true
+    Description: Splash screen for the SDK Engine
+    Group: System/Base
+    Provides:
+      - boot-splash-screen
+    Requires:
+      - plymouth-lite
+      - sdk-info
+    Files:
+      - '%{_datadir}/plymouth/splash.png'
+      - '%{_sysconfdir}/sysconfig/splashfontcol'
+
 Patches: []
