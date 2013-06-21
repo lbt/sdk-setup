@@ -122,6 +122,9 @@ mkdir -p %{buildroot}/%{_sysconfdir}/ssh/authorized_keys
 cp ssh-env.conf  %{buildroot}/%{_sysconfdir}/ssh/
 cp sshd_config_engine  %{buildroot}/%{_sysconfdir}/ssh/
 
+mkdir -p %{buildroot}/home/deploy
+chmod 1777 %{buildroot}/home/deploy
+
 # Until login.prefs.systemd is ready
 cp mersdk.env.systemd  %{buildroot}/%{_sysconfdir}/
 
@@ -205,6 +208,7 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %config %{_sysconfdir}/ssh/sshd_config_engine
 %config %{_sysconfdir}/mersdk.env.systemd
 %dir %{_sysconfdir}/ssh/authorized_keys
+%dir /home/deploy
 %{_sysconfdir}/mer-sdk-vbox
 # >> files sdk-vm
 # << files sdk-vm
