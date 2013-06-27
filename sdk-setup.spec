@@ -14,7 +14,7 @@ Name:       sdk-setup
 # << macros
 
 Summary:    SDK setup packages for Mer SDK
-Version:    0.46
+Version:    0.47
 Release:    1
 Group:      System/Base
 License:    GPL
@@ -77,6 +77,15 @@ Provides:   boot-splash-screen
 
 %description -n sdk-mer-branding
 Splash screen for the SDK Engine
+
+%package -n connman-configs-mersdk-emul
+Summary:    Connman configs for SDK Emulator
+Group:      System/Base
+Requires:   connman
+Provides:   connman-configs
+
+%description -n connman-configs-mersdk-emul
+Connman configs for SDK emulator to ensure session is started
 
 %prep
 %setup -q -n src
@@ -142,6 +151,10 @@ cp src/updateQtCreatorTargets %{buildroot}%{_bindir}/updateQtCreatorTargets
 # sdk-mer-branding
 install -D -m 644 branding/mer-splash.png %{buildroot}%{_datadir}/plymouth/splash.png
 install -D -m 755 branding/splashfontcol %{buildroot}%{_sysconfdir}/sysconfig/splashfontcol
+
+# connman-configs-mersdk-emul
+mkdir -p %{buildroot}%{_sysconfdir}/connman
+install -D -m 755  connman_main.conf %{buildroot}%{_sysconfdir}/connman/main.conf
 
 # << install pre
 
@@ -235,3 +248,9 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %{_sysconfdir}/sysconfig/splashfontcol
 # >> files sdk-mer-branding
 # << files sdk-mer-branding
+
+%files -n connman-configs-mersdk-emul
+%defattr(-,root,root,-)
+%{_sysconfdir}/connman/main.conf
+# >> files connman-configs-mersdk-emul
+# << files connman-configs-mersdk-emul

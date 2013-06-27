@@ -1,7 +1,7 @@
 Name: sdk-setup
 Summary: SDK setup packages for Mer SDK
 Description: Scripts, configurations and utilities to build Mer SDK and variants
-Version: 0.46
+Version: 0.47
 Release: 1
 Group: System/Base
 License: GPL
@@ -100,4 +100,15 @@ SubPackages:
     Files:
       - '%{_datadir}/plymouth/splash.png'
       - '%{_sysconfdir}/sysconfig/splashfontcol'
+  - Name: connman-configs-mersdk-emul
+    Summary: Connman configs for SDK Emulator
+    AsWholeName: true
+    Description: Connman configs for SDK emulator to ensure session is started
+    Group: System/Base
+    Provides:
+      - connman-configs
+    Requires:
+      - connman
+    Files:
+      - '%{_sysconfdir}/connman/main.conf'
 Patches: []
