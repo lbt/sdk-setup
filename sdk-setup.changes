@@ -1,3 +1,6 @@
+* Thu Jun 27 2013 David Greaves <david@dgreaves.com> - 0.48-1
+- [sdk-manage] QtCreator needs to see /usr/lib/qt5/bin/ in the host_target
+
 * Thu Jun 27 2013 David Greaves <david@dgreaves.com> - 0.47-1
 - [sdk-manage] Support syncing Qt5 libs too - d'oh
 - [sdk-manage] Remove duplicate message and use correct file in stat check
