@@ -72,7 +72,7 @@ Contains some utility scripts to support Mer SDK development
 Summary:    Mer Branding for the SDK Engine
 Group:      System/Base
 Requires:   plymouth-lite
-Requires:   sdk-info
+Requires:   sdk-vm
 Provides:   boot-splash-screen
 
 %description -n sdk-mer-branding

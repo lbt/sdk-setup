@@ -97,7 +97,7 @@ SubPackages:
       - boot-splash-screen
     Requires:
       - plymouth-lite
-      - sdk-info
+      - sdk-vm
     Files:
       - '%{_datadir}/plymouth/splash.png'
       - '%{_sysconfdir}/sysconfig/splashfontcol'
