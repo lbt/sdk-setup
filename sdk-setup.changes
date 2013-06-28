@@ -1,3 +1,6 @@
+* Fri Jun 28 2013 David Greaves <david@dgreaves.com> - 0.49-2
+- [sdk-mer-branding] depends on sdk-vm, not sdk-info
+
 * Fri Jun 28 2013 David Greaves <david@dgreaves.com> - 0.49-1
 - [sdk-shutdown] Add for consistency with emulator
 - [sdk-manage] now has "--devel --list <target> [<search string>]" option to allow Control Centre to see all packages
