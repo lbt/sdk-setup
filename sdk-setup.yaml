@@ -1,7 +1,7 @@
 Name: sdk-setup
 Summary: SDK setup packages for Mer SDK
 Description: Scripts, configurations and utilities to build Mer SDK and variants
-Version: 0.48
+Version: 0.49
 Release: 1
 Group: System/Base
 License: GPL
@@ -49,6 +49,7 @@ SubPackages:
       - '%{_bindir}/sdk-version'
       - '%{_bindir}/sdk-info'
       - '%{_bindir}/sdk-setup-enginelan'
+      - '%{_bindir}/sdk-shutdown'
       - '%{_unitdir}/information.service'
       - '%{_unitdir}/sdk-enginelan.service'
       - '%{_unitdir}/host_targets.service'

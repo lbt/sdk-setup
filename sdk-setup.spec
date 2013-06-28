@@ -14,7 +14,7 @@ Name:       sdk-setup
 # << macros
 
 Summary:    SDK setup packages for Mer SDK
-Version:    0.48
+Version:    0.49
 Release:    1
 Group:      System/Base
 License:    GPL
@@ -121,6 +121,7 @@ mkdir -p %{buildroot}/%{_unitdir}
 cp --no-dereference systemd/* %{buildroot}/%{_unitdir}/
 cp src/sdk-info %{buildroot}%{_bindir}/
 cp src/sdk-setup-enginelan %{buildroot}%{_bindir}/
+cp src/sdk-shutdown %{buildroot}%{_bindir}/
 # This should really be %%{_unitdir}/default.target but systemd owns that :/
 mkdir -p %{buildroot}/%{_sysconfdir}/systemd/system/
 ln -sf %{_unitdir}/multi-user.target  %{buildroot}/%{_sysconfdir}/systemd/system/default.target
@@ -210,6 +211,7 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %{_bindir}/sdk-version
 %{_bindir}/sdk-info
 %{_bindir}/sdk-setup-enginelan
+%{_bindir}/sdk-shutdown
 %{_unitdir}/information.service
 %{_unitdir}/sdk-enginelan.service
 %{_unitdir}/host_targets.service
