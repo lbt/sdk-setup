@@ -1,3 +1,11 @@
+* Wed Jul 03 2013 David Greaves <david@dgreaves.com> - 0.51-1
+- [sdk-manage] Add --jfdi option to --target --install since ssu makes zypper se hang
+- [sdk-manage] Add --status and --update to --target
+- [sdk-manage] Don't refresh or interact when doing a search or remove
+- [mb2] Allow mb2 to run qmake/make without a spec file
+- [mb2] If ssu is used then verify registration.
+- [mb2] Support qtc_qmake5 for QtC. Set noecho macro for when rpm supports it. Quieten debug
+
 * Mon Jul 01 2013 David Greaves <david@dgreaves.com> - 0.50-1
 - [sdk-manage] Show all packages to package manager, not just -devel
 - [sdk-manage] Move /home/src<N> handling to the info service
