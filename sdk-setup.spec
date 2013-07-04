@@ -14,7 +14,7 @@ Name:       sdk-setup
 # << macros
 
 Summary:    SDK setup packages for Mer SDK
-Version:    0.51
+Version:    0.52
 Release:    1
 Group:      System/Base
 License:    GPL

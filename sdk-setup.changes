@@ -1,3 +1,9 @@
+* Thu Jul 04 2013 David Greaves <david@dgreaves.com> - 0.52-1
+- [mb2] Now a spec is optional it's not an error if one is missing in some situations - but equally, we should still look for one and use it if found.
+- [mb2] only verify_target_dependencies if there is a spec
+- [mb2] rpmbuild runs script under -e so 'false' is a problem. Pass args to raw q/make
+- [mb2] Do the best we can with ssu to see if registration is needed
+
 * Wed Jul 03 2013 David Greaves <david@dgreaves.com> - 0.51-1
 - [sdk-manage] Add --jfdi option to --target --install since ssu makes zypper se hang
 - [sdk-manage] Add --status and --update to --target
