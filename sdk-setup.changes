@@ -1,3 +1,8 @@
+* Mon Jul 08 2013 David Greaves <david@dgreaves.com> - 0.53-1
+- [sdk-version] Update sdk-version file with Mer Repositories
+- [sdk-manage] Running under set -u so need to initialise
+- [sdk-manage] Do not set a tools dir for i486 sb2 targets
+
 * Thu Jul 04 2013 David Greaves <david@dgreaves.com> - 0.52-1
 - [mb2] Now a spec is optional it's not an error if one is missing in some situations - but equally, we should still look for one and use it if found.
 - [mb2] only verify_target_dependencies if there is a spec
