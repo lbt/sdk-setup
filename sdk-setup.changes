@@ -1,3 +1,8 @@
+* Thu Jul 11 2013 David Greaves <david@dgreaves.com> - 0.54-1
+- [mb2] Fix typo in qmake macro missing % - also add -j option as per make macro
+- [mb2] Implement complex rules for .spec handling (ie optional, try to make from yaml etc)
+- [mb2] Keep all initialisation together
+
 * Mon Jul 08 2013 David Greaves <david@dgreaves.com> - 0.53-1
 - [sdk-version] Update sdk-version file with Mer Repositories
 - [sdk-manage] Running under set -u so need to initialise
