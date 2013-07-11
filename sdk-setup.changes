@@ -1,3 +1,6 @@
+* Thu Jul 11 2013 David Greaves <david@dgreaves.com> - 0.55-1
+- [mb2] Fix deployment issues with ssh known_hosts by using a specific ssh config
+
 * Thu Jul 11 2013 David Greaves <david@dgreaves.com> - 0.54-1
 - [mb2] Fix typo in qmake macro missing % - also add -j option as per make macro
 - [mb2] Implement complex rules for .spec handling (ie optional, try to make from yaml etc)
