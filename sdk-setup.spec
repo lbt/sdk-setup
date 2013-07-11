@@ -149,6 +149,9 @@ cp src/qb %{buildroot}%{_bindir}/
 cp src/sdk-manage %{buildroot}%{_bindir}/
 cp src/updateQtCreatorTargets %{buildroot}%{_bindir}/updateQtCreatorTargets
 
+mkdir -p %{buildroot}/%{_sysconfdir}/ssh/
+cp ssh_config.sdk  %{buildroot}/%{_sysconfdir}/ssh/
+
 # sdk-mer-branding
 install -D -m 644 branding/mer-splash.png %{buildroot}%{_datadir}/plymouth/splash.png
 install -D -m 755 branding/splashfontcol %{buildroot}%{_sysconfdir}/sysconfig/splashfontcol
@@ -245,6 +248,7 @@ fi
 %{_bindir}/qb
 %{_bindir}/sdk-manage
 %{_bindir}/updateQtCreatorTargets
+%config %{_sysconfdir}/ssh/ssh_config.sdk
 # >> files sdk-utils
 # << files sdk-utils
 

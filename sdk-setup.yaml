@@ -87,6 +87,7 @@ SubPackages:
       - '%{_bindir}/qb'
       - '%{_bindir}/sdk-manage'
       - '%{_bindir}/updateQtCreatorTargets'
+      - '%config %{_sysconfdir}/ssh/ssh_config.sdk'
   - Name: sdk-mer-branding
     Summary: Mer Branding for the SDK Engine
     AsWholeName: true
