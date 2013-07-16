@@ -1,3 +1,8 @@
+* Tue Jul 16 2013 David Greaves <david@dgreaves.com> - 0.56-1
+- [sdk-manage] Write a unique device id to newly created sb2 targets
+- [sdk-manage] Sync the qt5 qml imports directories too
+- [sdk-utils] Add bash completion for mb
+
 * Thu Jul 11 2013 David Greaves <david@dgreaves.com> - 0.55-1
 - [mb2] Fix deployment issues with ssh known_hosts by using a specific ssh config
 
