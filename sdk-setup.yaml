@@ -64,6 +64,7 @@ SubPackages:
       - '%config %{_sysconfdir}/mersdk.env.systemd'
       - '%dir /home/deploy'
       - '%{_sysconfdir}/mer-sdk-vbox'
+      - '%attr(-,mersdk,mersdk) %{_sysconfdir}/mersdk/'
   - Name: sdk-sb2-config
     AsWholeName: true
     Summary: Mer SDK files to configure sb2

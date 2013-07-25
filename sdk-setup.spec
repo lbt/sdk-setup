@@ -236,6 +236,7 @@ fi
 %config %{_sysconfdir}/mersdk.env.systemd
 %dir /home/deploy
 %{_sysconfdir}/mer-sdk-vbox
+%attr(-,mersdk,mersdk) %{_sysconfdir}/mersdk/
 # >> files sdk-vm
 # << files sdk-vm
 
