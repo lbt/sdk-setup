@@ -1,7 +1,7 @@
 Name: sdk-setup
 Summary: SDK setup packages for Mer SDK
 Description: Scripts, configurations and utilities to build Mer SDK and variants
-Version: 0.56
+Version: 0.57
 Release: 1
 Group: System/Base
 License: GPL
@@ -41,7 +41,7 @@ SubPackages:
     RequiresPost:
       - /bin/ln
     Requires:
-      - sdk-utils
+      - sdk-utils == %{version}
       - connman >= 1.14
       - virtualbox-guest-tools
       - openssh-server
@@ -56,6 +56,8 @@ SubPackages:
       - '%{_unitdir}/home-mersdk.service'
       - '%{_unitdir}/etc-mersdk-share.service'
       - '%{_unitdir}/etc-ssh-authorized_keys.mount'
+      - '%{_unitdir}/sdk-refresh.service'
+      - '%{_unitdir}/sdk-refresh.timer'
       - '%config %{_sysconfdir}/systemd/system/default.target'
       - '%config %{_sysconfdir}/ssh/ssh-env.conf'
       - '%config %{_sysconfdir}/ssh/sshd_config_engine'

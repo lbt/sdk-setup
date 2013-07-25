@@ -1,3 +1,7 @@
+* Thu Jul 25 2013 David Greaves <david@dgreaves.com> - 0.57-1
+- [sdk-manage] add --refresh-all; add --upgradable and --refresh to --sdk and --target
+- [sdk-vm] Add sdk-refresh .service and .timer to update SDK repos regularly
+
 * Tue Jul 16 2013 David Greaves <david@dgreaves.com> - 0.56-1
 - [sdk-manage] Write a unique device id to newly created sb2 targets
 - [sdk-manage] Sync the qt5 qml imports directories too

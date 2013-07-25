@@ -14,7 +14,7 @@ Name:       sdk-setup
 # << macros
 
 Summary:    SDK setup packages for Mer SDK
-Version:    0.56
+Version:    0.57
 Release:    1
 Group:      System/Base
 License:    GPL
@@ -40,7 +40,7 @@ Contains the mer_sdk_chroot script and supporting configs
 %package -n sdk-vm
 Summary:    Mer SDK files for the VM variant
 Group:      System/Base
-Requires:   sdk-utils
+Requires:   sdk-utils == %{version}
 Requires:   connman >= 1.14
 Requires:   virtualbox-guest-tools
 Requires:   openssh-server
@@ -191,6 +191,8 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %systemd_post host_targets.service
 %systemd_post information.service
 %systemd_post sdk-enginelan.service
+%systemd_post sdk-refresh.service
+%systemd_post sdk-refresh.timer
 # this could be mounted read-only so to avoid a
 # cpio: chmod failed - Read-only file system
 if [ $1 -eq 1 ] ; then
@@ -226,6 +228,8 @@ fi
 %{_unitdir}/home-mersdk.service
 %{_unitdir}/etc-mersdk-share.service
 %{_unitdir}/etc-ssh-authorized_keys.mount
+%{_unitdir}/sdk-refresh.service
+%{_unitdir}/sdk-refresh.timer
 %config %{_sysconfdir}/systemd/system/default.target
 %config %{_sysconfdir}/ssh/ssh-env.conf
 %config %{_sysconfdir}/ssh/sshd_config_engine
