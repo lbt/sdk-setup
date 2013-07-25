@@ -14,7 +14,7 @@ Name:       sdk-setup
 # << macros
 
 Summary:    SDK setup packages for Mer SDK
-Version:    0.58
+Version:    0.59
 Release:    1
 Group:      System/Base
 License:    GPL
@@ -126,6 +126,8 @@ cp src/sdk-shutdown %{buildroot}%{_bindir}/
 mkdir -p %{buildroot}/%{_sysconfdir}/systemd/system/
 ln -sf %{_unitdir}/multi-user.target  %{buildroot}/%{_sysconfdir}/systemd/system/default.target
 echo "This file tells ssu this is a virtualbox SDK installation" > %{buildroot}/%{_sysconfdir}/mer-sdk-vbox
+
+mkdir -p %{buildroot}/%{_sysconfdir}/mersdk
 
 mkdir -p %{buildroot}/%{_sysconfdir}/ssh/
 mkdir -p %{buildroot}/%{_sysconfdir}/ssh/authorized_keys
