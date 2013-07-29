@@ -1,3 +1,6 @@
+* Mon Jul 29 2013 David Greaves <david@dgreaves.com> - 0.60-1
+- [sdk-info] Fix a typo in VM boot message
+
 * Thu Jul 25 2013 David Greaves <david@dgreaves.com> - 0.59-1
 - [sdk-info] Update boot message
 
