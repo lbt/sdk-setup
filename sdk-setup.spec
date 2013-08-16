@@ -14,7 +14,7 @@ Name:       sdk-setup
 # << macros
 
 Summary:    SDK setup packages for Mer SDK
-Version:    0.61
+Version:    0.62
 Release:    1
 Group:      System/Base
 License:    GPL
@@ -122,6 +122,7 @@ cp --no-dereference systemd/* %{buildroot}/%{_unitdir}/
 cp src/sdk-info %{buildroot}%{_bindir}/
 cp src/sdk-setup-enginelan %{buildroot}%{_bindir}/
 cp src/sdk-shutdown %{buildroot}%{_bindir}/
+cp src/resize-rootfs %{buildroot}%{_bindir}/
 # This should really be %%{_unitdir}/default.target but systemd owns that :/
 mkdir -p %{buildroot}/%{_sysconfdir}/systemd/system/
 ln -sf %{_unitdir}/multi-user.target  %{buildroot}/%{_sysconfdir}/systemd/system/default.target
@@ -162,6 +163,9 @@ install -D -m 755 branding/splashfontcol %{buildroot}%{_sysconfdir}/sysconfig/sp
 mkdir -p %{buildroot}%{_sysconfdir}/connman
 install -D -m 755  connman_main.conf %{buildroot}%{_sysconfdir}/connman/main.conf
 
+# Make all bindir executable
+chmod 755 %{buildroot}%{_bindir}/*
+
 # << install pre
 
 # >> install post
@@ -195,6 +199,7 @@ if ! rpm --quiet -q ca-certificates && [ -d /%{_sysconfdir}/ssl/certs ] ; then e
 %systemd_post sdk-enginelan.service
 %systemd_post sdk-refresh.service
 %systemd_post sdk-refresh.timer
+%systemd_post resize-rootfs.service
 # this could be mounted read-only so to avoid a
 # cpio: chmod failed - Read-only file system
 if [ $1 -eq 1 ] ; then
@@ -224,6 +229,7 @@ fi
 %{_bindir}/sdk-info
 %{_bindir}/sdk-setup-enginelan
 %{_bindir}/sdk-shutdown
+%{_bindir}/resize-rootfs
 %{_unitdir}/information.service
 %{_unitdir}/sdk-enginelan.service
 %{_unitdir}/host_targets.service
@@ -232,6 +238,7 @@ fi
 %{_unitdir}/etc-ssh-authorized_keys.mount
 %{_unitdir}/sdk-refresh.service
 %{_unitdir}/sdk-refresh.timer
+%{_unitdir}/resize-rootfs.service
 %config %{_sysconfdir}/systemd/system/default.target
 %config %{_sysconfdir}/ssh/ssh-env.conf
 %config %{_sysconfdir}/ssh/sshd_config_engine

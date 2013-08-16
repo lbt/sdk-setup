@@ -1,7 +1,7 @@
 Name: sdk-setup
 Summary: SDK setup packages for Mer SDK
 Description: Scripts, configurations and utilities to build Mer SDK and variants
-Version: 0.61
+Version: 0.62
 Release: 1
 Group: System/Base
 License: GPL
@@ -50,6 +50,7 @@ SubPackages:
       - '%{_bindir}/sdk-info'
       - '%{_bindir}/sdk-setup-enginelan'
       - '%{_bindir}/sdk-shutdown'
+      - '%{_bindir}/resize-rootfs'
       - '%{_unitdir}/information.service'
       - '%{_unitdir}/sdk-enginelan.service'
       - '%{_unitdir}/host_targets.service'
@@ -58,6 +59,7 @@ SubPackages:
       - '%{_unitdir}/etc-ssh-authorized_keys.mount'
       - '%{_unitdir}/sdk-refresh.service'
       - '%{_unitdir}/sdk-refresh.timer'
+      - '%{_unitdir}/resize-rootfs.service'
       - '%config %{_sysconfdir}/systemd/system/default.target'
       - '%config %{_sysconfdir}/ssh/ssh-env.conf'
       - '%config %{_sysconfdir}/ssh/sshd_config_engine'
