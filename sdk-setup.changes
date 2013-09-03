@@ -1,3 +1,10 @@
+* Tue Sep 03 2013 David Greaves <david@dgreaves.com> - 0.63-1
+- [sb2] Accelerate more binaries in sdk-build(+pp) modes
+- [mb2] Improve XML handling to better support multiple devices
+- [mb2] Ensure key present
+- [mb2] Clean up debug
+- [mb2] Use _smp_mflags instead of the jobs macro for multicore builds
+
 * Fri Aug 16 2013 David Greaves <david@dgreaves.com> - 0.62-1
 - [mb2] Don't leak device attributes between XML nodes
 - [sdk-vm] Add resize rootfs support
